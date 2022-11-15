@@ -1,0 +1,24 @@
+.noEncontrado{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.noEncontrado h1{
+    text-transform: uppercase;
+    color: black;
+}
+.noEncontrado a{
+    color: var(--primary);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 3rem;
+    margin: 0;
+}
+.imagen{
+    background-color: black;
+    border-radius: 8px;
+    padding: 2rem;
+}
