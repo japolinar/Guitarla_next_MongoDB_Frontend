@@ -4,9 +4,9 @@ import Listado from '../components/Listado'
 import ListadoBlog from '../components/ListadoBlog'
 
 export default function Home({guitarras, cursos, entradas}) {
-  //console.log(guitarras)
-  //console.log(cursos)
-  //console.log(entradas)
+  // console.log(guitarras)
+  // console.log(cursos)
+  // console.log(entradas)
   return ( 
     <Layout
       pagina = 'Inicio'
@@ -37,6 +37,7 @@ export default function Home({guitarras, cursos, entradas}) {
 export async function getServerSideProps(){
 
   const urlGuitarras = `${process.env.API_URL}/guitarras?_sort=precio:desc`
+  
   const urlCursos = `${process.env.API_URL}/cursos`
   const urlBlogs = `${process.env.API_URL}/blogs?_limit=3`
 
