@@ -6,7 +6,7 @@ import Layout from '../../components/Layout'
 const Producto = ({guitarra, agregarCarrito}) => {
     //console.log(guitarra)
     const [cantidad, setCantidad] = useState(1);
-    const {descripcion, imagen, nombre, precio, id} = guitarra[0]
+    const {descripcion, imagen, nombre, precio, _id} = guitarra[0]
 
     const handleSumit = (e)=>{
         e.preventDefault()
@@ -18,7 +18,7 @@ const Producto = ({guitarra, agregarCarrito}) => {
         }
         //Agregarlo al carrito
         const guitarraSeleccionada ={
-            id,
+            _id,
             imagen: imagen.url,
             nombre,
             precio,
@@ -26,6 +26,8 @@ const Producto = ({guitarra, agregarCarrito}) => {
         }
 
         agregarCarrito(guitarraSeleccionada)
+
+        alert('Se guarda en el carrito de compra la cantidad de: '+guitarraSeleccionada.cantidad)
 
     }
   return (

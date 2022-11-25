@@ -26,7 +26,7 @@ const Header = ({guitarra}) => {
             <Link href='/carrito'>
               <a>
                 <Image 
-                  layout="fixed" width={30} height={25} src="/img/carrito.png" alt='Imagen Carrito'
+                  layout="fixed" width={30} height={25} src={"/img/carrito.png"} alt='Imagen Carrito'
                 ></Image>
               </a>
             </Link>
