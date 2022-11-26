@@ -1,6 +1,7 @@
 import '../styles/normalize.css'
 import '../styles/globals.css'
 import {useState, useEffect} from 'react'
+import Swal from 'sweetalert2';
 
 function MyApp({ Component, pageProps }) {
   const [carrito, setCarrito] = useState([]);
@@ -46,8 +47,29 @@ function MyApp({ Component, pageProps }) {
 
   const eliminarProducto = (id) =>{
     //console.log(id)
-    const carritoActualizado = carrito.filter( (articulo)=> articulo._id !== id)
-    setCarrito(carritoActualizado)
+    const carritoActualizado = carrito.filter( (articulo)=> articulo._id !== id)    
+
+    Swal.fire({
+      title: 'Estas Seguro?',
+      text: "Deseas Eliminar el artuculo!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      cancelButtonText: 'Cancelar',
+      confirmButtonText: 'Si, Eliminar!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+
+        setCarrito(carritoActualizado)
+
+        Swal.fire(
+          'Eliminado!',
+          'Tu Articulo se ha eliminado.',
+          'success'
+        )
+      }
+    })
   }
 
   return (

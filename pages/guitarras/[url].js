@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import Image from 'next/image'
 import style from '../../styles/Guitarra.module.css'
 import Layout from '../../components/Layout'
+import Swal from 'sweetalert2';
 
 const Producto = ({guitarra, agregarCarrito}) => {
     //console.log(guitarra)
@@ -25,9 +26,15 @@ const Producto = ({guitarra, agregarCarrito}) => {
             cantidad
         }
 
-        agregarCarrito(guitarraSeleccionada)
+        agregarCarrito(guitarraSeleccionada)        
 
-        alert('Se guarda en el carrito de compra la cantidad de: '+guitarraSeleccionada.cantidad)
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Guardada la compra, la cantidad de: '+ guitarraSeleccionada.cantidad,
+            showConfirmButton: false,
+            timer: 2500
+          })
 
     }
   return (
