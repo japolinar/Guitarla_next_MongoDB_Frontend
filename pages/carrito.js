@@ -36,7 +36,7 @@ const Carrito = ({carrito, actualizarCantidad, eliminarProducto}) => {
                                     className={style.select}
                                     onChange={(e)=> actualizarCantidad({
                                         cantidad: e.target.value,
-                                        id: producto._id
+                                        _id: producto._id
                                     })}                                    
                                 >                                    
                                     <option value='1'>1</option>
