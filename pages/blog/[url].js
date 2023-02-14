@@ -47,7 +47,7 @@ export async function getStaticPaths (){
   const paths = entradas.map((entrada)=>({
     params: {url: entrada.url}
   }))
-  //console.log(paths)
+  //console.log(paths);
 
   return{
     paths,
